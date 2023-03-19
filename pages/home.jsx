@@ -1,14 +1,30 @@
 import People from "@/components/People"
 import { useStore } from "@/lib/store"
 import { useRef, useState } from "react"
+import { getAuth, signOut } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import { useRouter } from "next/router";
 
 const Home = () => {
+  const router = useRouter()
   const addPerson = useStore((state) => state.addPerson)
   const puppy = useStore((state) => state.puppy)
   const addPuppy = useStore(state => state.addPuppy)
   const inputRef = useRef()
   const darkmode = useStore(state => state.darkmode)
   const changeDarkmode = useStore(state => state.changeDarkmode)
+
+  const signout = () => {
+
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      router.push('/')
+      console.log('sign out successful');
+    }).catch((error) => {
+      // An error happened.
+      console.log('error sign out !!!!!!!!');
+    });
+  }
 
 
   const add = () => {
@@ -18,6 +34,7 @@ const Home = () => {
    
   return (
     <div className={ darkmode ? 'bg-white' : 'bg-black text-white'}>
+      <button onClick={signout}>sign out</button>
       <div>
         <p>{puppy} of puppies in here</p>
         <button className="bg-slate-500
