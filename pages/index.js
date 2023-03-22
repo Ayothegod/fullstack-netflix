@@ -21,7 +21,7 @@ export default function Home() {
             <div className="flex items-center justify-between">
               <p className="font-bold text-3xl text-red-600  ">NETFLIX</p>
               <button className="font-medium px-3 py-1 rounded-md bg-red-600">
-                <Link href='/register'>Sign In</Link> 
+                <Link href='/login'>Sign In</Link> 
               </button>
             </div>
             <div className=" h-full flex items-center justify-center  ">
