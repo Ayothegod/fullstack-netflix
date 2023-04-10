@@ -22,7 +22,7 @@ const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,com
       <div className="bg-black text-white h-full">
         <Header/>
         <Banner/>
-        <div className="mt-20">
+        <div className="mt-20 flex ">
           <MovieRow trendingdata={trendingdata}/>
         </div>
       </div>

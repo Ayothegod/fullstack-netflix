@@ -1,3 +1,16 @@
 @tailwind base;
+
+.scroller {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+.scroller::-webkit-scrollbar {
+  width: 10px;
+}
+.scroller::-webkit-scrollbar-thumb {
+  background-color: rgb(163, 150, 150);
+  border-radius: 15px;
+}
+
 @tailwind components;
 @tailwind utilities;

@@ -18,7 +18,7 @@ const signout = () => {
     });
   }
   return (
-    <div className='h-12 fixed flex inset-0 items-center justify-between px-8  '>
+    <div className='h-12 fixed flex inset-0 items-center justify-between px-8 z-50 '>
         <Image src={logo} alt='hello' className="w-20"/>
         <button onClick={signout}>Sign out</button>
     </div>
