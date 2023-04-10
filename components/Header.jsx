@@ -11,20 +11,20 @@ const Header = () => {
   
 const signout = () => {
   signOut(auth).then(() => {
-    // Sign-out successful. hello
     router.push('/')
       console.log('sign out successful');
     }).catch((error) => {
-      // An error happened.
       console.log('error sign out !!!!!!!!');
     });
   }
   return (
-    <div>
+    <div className='h-12 fixed flex inset-0 items-center justify-between px-8  '>
+        <Image src={logo} alt='hello' className="w-20"/>
         <button onClick={signout}>Sign out</button>
-        <Image src={logo} alt='hello' className="w-10 h-10 "/>
     </div>
   )
 }
 
+      // <div className='  '>
+      // </div>
 export default Header

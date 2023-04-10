@@ -14,9 +14,9 @@ module.exports = {
         green: "#13ce66",
         torque: "#cbfff2",
         light: "#dceaff",
-        // "gray-dark": "#273444",
-        // gray: "#8492a6",
-        // "gray-light": "#d3dce6",
+        "gray-dark": "#273444",
+        gray: "#8492a6",
+        "gray-light": "#d3dce6",
         backgroundImage: {
           'netflix': "url('./assets/netflix.jpg')",
         },
