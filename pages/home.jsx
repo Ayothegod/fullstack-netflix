@@ -19,11 +19,11 @@ const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,com
   })
   const imgPath = "http://image.tmdb.org/t/p/w500"
   return (
-      <div className="bg-black text-white h-full">
+      <div className="bg-black text-white h-full w-full ">
         <Header/>
         <Banner/>
-        <div className="mt-20 flex ">
-          <MovieRow trendingdata={trendingdata}/>
+        <div className="m-2 flex ">
+          <MovieRow title="Trending Movie" trendingdata={trendingdata}/>
         </div>
       </div>
   )

@@ -6,6 +6,7 @@
 }
 .scroller::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 .scroller::-webkit-scrollbar-thumb {
   background-color: rgb(163, 150, 150);
