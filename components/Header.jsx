@@ -17,13 +17,11 @@ const Header = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const email = user.email
-        console.log(user);
         setEmail(email)
       } else {
-        console.log("no user");
+        console.log("no user !!!!!!");
       }
     });
-  console.log(email);
   });
   
   return (
