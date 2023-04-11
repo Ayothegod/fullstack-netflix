@@ -6,8 +6,8 @@ const MovieRow = ({ trendingdata,title }) => {
   const secUrl = "https://via.placeholder.com/600x400/cccccc/242020";
   return (
     <div>
-      <p>{title}</p>
-    <div className="scroller flex mb-10  gap-2 overflow-x-scroll overflow-y-hidden ">
+      <p className="uppercase">{title}</p>
+    <div className="scroller flex   gap-2 overflow-x-scroll overflow-y-hidden ">
       {trendingdata.map((data) => (
         <div key={data.id} className="flex-shrink-0 my-1">
           <Image

@@ -7,30 +7,27 @@ import MovieRow from "@/components/MovieRow"
 
 // const user = auth.currentUser;
 const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,comedydata,romancedata,documentarydata}) => {  
-  console.log({
-    trendingdata:trendingdata,
-    horrordata:horrordata,
-    originalsdata:originalsdata,
-    toprateddata:toprateddata,
-    actiondata:actiondata,
-    comedydata:comedydata,
-    romancedata:romancedata,
-    documentarydata:documentarydata
-  })
   const imgPath = "http://image.tmdb.org/t/p/w500"
   return (
       <div className="bg-black text-white h-full w-full ">
         <Header/>
         <Banner/>
-        <div className="m-2 flex ">
-          <MovieRow title="Trending Movie" trendingdata={trendingdata}/>
+        <div className="my-6 mx-2 ">
+          <MovieRow title="Trending Movies" trendingdata={trendingdata}/>
+          <MovieRow title="Romance Movies" trendingdata={romancedata}/>
+          <MovieRow title="Top-Rated Movies" trendingdata={toprateddata}/>
+          <MovieRow title="Horror Movies" trendingdata={horrordata}/>
+          <MovieRow title="Comedy" trendingdata={comedydata}/>
+          <MovieRow title="Documentaries" trendingdata={documentarydata}/>
+          <MovieRow title="Action" trendingdata={actiondata}/>
+          <MovieRow title="Discover" trendingdata={originalsdata}/>
         </div>
       </div>
   )
 }
 export default Home
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
   const fetchTrending = await fetch(requests.fetchTrending)
   const trendingdata = await fetchTrending.json()
   const fetchHorrorMovies = await fetch(requests.fetchHorrorMovies)
@@ -63,26 +60,4 @@ export async function getServerSideProps(context) {
        }
   }
 }
-// const {fetchTrending,fetchNetflixOriginals,fetchTopRated,fetchActionMovies,fetchComedyMovies,fetchHorrorMovies,fetchRomanceMovies,fetchDocumentaries}
-// export async function getStaticProps() {
-//   const res = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=9b0b141b44e2b1a77e4965a9ac513ca4')
-//   const data = await res.json()
 
-//   return {
-//     props: {
-//       data:data.results,
-//     },
-//   }
-// }
-
-    // useEffect(() => {
-    //   onAuthStateChanged(auth, (user) => {
-    //   if (user) {
-    //     console.log(user);
-    //     // ...
-    //   } else {
-    //     // User is signed out
-    //     console.log('no user');
-    //   }
-    // });
-    // })

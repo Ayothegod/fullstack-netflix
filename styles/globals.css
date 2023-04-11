@@ -5,8 +5,8 @@
   scrollbar-color: var(--secondary) var(--primary);
 }
 .scroller::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
 }
 .scroller::-webkit-scrollbar-thumb {
   background-color: rgb(163, 150, 150);
