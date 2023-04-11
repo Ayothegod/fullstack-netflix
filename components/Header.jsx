@@ -1,27 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { signOut, onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/lib/firebase";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import logo from "assets/logo.svg";
 import netflixAvatar from "@/assets/Netflix-avatar.png";
 import { FaBell } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
+import Link from "next/link";
+import { auth } from "@/lib/firebase";
 
 const Header = () => {
   const router = useRouter();
-  //   const auth = getAuth();
+  const [email,setEmail] = useState("")
 
-  const signout = () => {
-    signOut(auth)
-      .then(() => {
-        router.push("/");
-        console.log("sign out successful");
-      })
-      .catch((error) => {
-        console.log("error sign out !!!!!!!!");
-      });
-  };
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const email = user.email
+        console.log(user);
+        setEmail(email)
+      } else {
+        console.log("no user");
+      }
+    });
+  console.log(email);
+  });
+  
   return (
     <div className="h-12 fixed flex inset-0 items-center justify-between px-8 z-50 ">
       <div className="flex items-center gap-4">
@@ -37,12 +41,15 @@ const Header = () => {
           <AiOutlineSearch className="w-6 h-6" />
           <FaBell className="w-4 h-4" />
         </div>
-        <Image src={netflixAvatar} alt="netflix-avatar" className="h-8 w-8" />
+        <div className="flex items-center">
+        <Link href="/signout" className="flex items-center gap-1">
+          <p>{email}</p>
+          <Image src={netflixAvatar} alt="netflix-avatar" className="h-8 w-8" />
+        </Link>
+        </div>
       </div>
     </div>
   );
 };
 export default Header;
-{
-  /* <button onClick={signout}>Sign out</button> */
-}
+

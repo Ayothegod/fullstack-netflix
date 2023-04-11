@@ -16,7 +16,6 @@ const Login = () => {
     const password = passwordRef.current.value
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in 
         const user = userCredential.user;
         console.log(user);
         router.push('/home')
@@ -35,13 +34,13 @@ const Login = () => {
     <div>
         <div className="bg-[url('../assets/netflix.jpg')] w-full  h-screen bg-cover bg-no-repeat bg-center ">
         <div className="backdrop-brightness-50 h-screen text-white">
-          <form action="" className="flex items-center justify-center h-screen">
-            <div className="bg-black p-8 h-screen sm:h-[90vh] sm:w-96 flex flex-col gap-4 justify-center w-screen ">
+          <form className="flex items-center justify-center h-screen">
+            <div className="bg-black p-8 h-screen md:h-auto sm:w-96 flex flex-col gap-4 justify-center w-screen ">
               <p className=" font-bold text-3xl md:text-4xl">Sign In</p>
               
             <input type="text" placeholder="email" ref={emailRef}
-            className='w-full p-3 rounded-md placeholder:text-lg outline-none border-none bg-gray-600' />
-            <input type="password" placeholder="password" ref={passwordRef} className='w-full p-3 rounded-md placeholder:text-lg outline-none border-none bg-gray-600' />
+            className='w-full p-3 text-black rounded-md placeholder:text-lg outline-none border-none bg-gray-600' />
+            <input type="password" placeholder="password" ref={passwordRef} className='w-full text-black p-3 rounded-md placeholder:text-lg outline-none border-none bg-gray-600' />
             <button onClick={login} className='w-full p-3 rounded-md  outline-none border-none bg-red-600 font-semibold text-lg mt-8'>Sign In</button>
             <p className="mt-10">
               New to Netflix? <span className="font-bold text-lg">
