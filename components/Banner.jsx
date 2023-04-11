@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import {CiCircleQuestion} from "react-icons/ci"
 import {FiPlay} from "react-icons/fi"
 
-// BsSearch,AiOutlineSearch,FaBell,HiOutlineBell,AiOutlinePlusCircle,CiCirclePlus,BiLike,AiFillLike,AiOutlineClockCircle,BsFillClockFill,FaShare,IoMdShareAlt,FiYoutube,FaYoutube,RxSpeakerLoud,HiSpeakerWave,MdCancel,MdOutlineCancel,
+// AiOutlinePlusCircle,CiCirclePlus,BiLike,AiFillLike,AiOutlineClockCircle,BsFillClockFill,FaShare,IoMdShareAlt,FiYoutube,FaYoutube,RxSpeakerLoud,HiSpeakerWave,MdCancel,MdOutlineCancel,
 
 
 const Banner = () => {
