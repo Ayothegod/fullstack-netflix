@@ -28,14 +28,14 @@ const Header = () => {
     <div className="h-12 fixed flex inset-0 items-center justify-between px-8 z-50 ">
       <div className="flex items-center gap-4">
         <Image src={logo} alt="hello" className="w-20" />
-        <div className="hidden md:block md:flex md:gap-4  ">
+        <div className="hidden md:flex md:gap-4  ">
           <p className="cursor-pointer">Home</p>
           <p className="cursor-pointer">TV Shows</p>
           <p className="cursor-pointer">PlayList</p>
         </div>
       </div>
       <div className="flex items-center gap-6">
-        <div className="flex gap-6 items-center hidden md:flex">
+        <div className=" gap-6 items-center hidden md:flex">
           <AiOutlineSearch className="w-6 h-6" />
           <FaBell className="w-4 h-4" />
         </div>
