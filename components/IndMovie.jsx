@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import Modal from "./Modal";
 
 const IndMovie = ({ data }) => {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,6 @@ const IndMovie = ({ data }) => {
         className="flex-shrink-0 my-1 cursor-pointer"
         onClick={() => setOpen(!open)}
       >
-        {/* <p>{data.title}</p> */}
         <Image
           src={imgPath + data.poster_path}
           alt={data.original_title}
@@ -26,7 +26,7 @@ const IndMovie = ({ data }) => {
       </div>
       {open && (
         <div>
-          <p>Hello the text</p>
+          <Modal data={data}/>
         </div>
       )}
     </>
@@ -34,11 +34,3 @@ const IndMovie = ({ data }) => {
 };
 
 export default IndMovie;
-
-{
-  open && (
-    <div>
-      <p>Hello the text</p>
-    </div>
-  );
-}
