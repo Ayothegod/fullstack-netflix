@@ -4,6 +4,7 @@ import Banner from "@/components/Banner"
 import Image from "next/image"
 import requests from "@/lib/requests"
 import MovieRow from "@/components/MovieRow"
+import {AiOutlineCopyrightCircle} from "react-icons/ai"
 
 // const user = auth.currentUser;
 const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,comedydata,romancedata,documentarydata}) => {  
@@ -23,8 +24,8 @@ const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,com
           <MovieRow title="Action" trendingdata={actiondata}/>
           <MovieRow title="Discover" trendingdata={originalsdata}/>
         </div>
-        <div>
-          Footer
+        <div className="border-t border-t-neutral-800 p-2">
+          <p className="flex items-center"><AiOutlineCopyrightCircle/>Ayomide 2023</p>
         </div>
       </div>
   )
