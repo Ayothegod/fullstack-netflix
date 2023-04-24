@@ -27,17 +27,16 @@ const Modal = ({ data, setOpen, open }) => {
             blurDataURL="https://placehold.co"
           />
         </div>
-        <div>
-        <p>{data.title}</p>
-        <p>{data.overview.slice(0,180) }...</p>
-        {/* <button>see more</button> */}
+        <div className="mb-2 mt-4 " >
+        <p className="text-white font-semibold text-lg md:text-xl ">{data.title}</p>
+        <p className="text-sm ">{data.overview.slice(0,180) }...</p>
         </div>
-        <button
+        {/* <button
           onClick={() => setOpen(!open)}
           className="bg-red-600 p-2 rounded-md"
           >
           Close Modal
-        </button>
+        </button> */}
       </div>
     </div>
   );
