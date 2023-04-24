@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import IndMovie from "./IndMovie";
 
 const MovieRow = ({ trendingdata, title }) => {
   const [open,setOpen] = useState(false)
@@ -12,17 +13,7 @@ const MovieRow = ({ trendingdata, title }) => {
       <div className="scroller flex   gap-2 overflow-x-scroll overflow-y-hidden ">
         {trendingdata.map((data, index) => (
           <>
-            <div key={data.id} className="flex-shrink-0 my-1" onClick={() => setOpen(!open)}>
-              <p className="hidden">{data.title}</p>
-              <Image
-                src={imgPath + data.poster_path}
-                alt={data.original_title}
-                className=" object-cover object-center  rounded-md "
-                width={150}
-                height={100}
-              />
-            </div>
-
+            <IndMovie data={data}/>
           </>
         ))}
       </div>
