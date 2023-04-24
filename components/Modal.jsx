@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import MuiModal from "@mui/material/Modal";
 import Image from "next/image";
 import { GrClose } from "react-icons/gr";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Modal = ({ data, setOpen, open }) => {
+  const [seeMore, setSeeMore] = useState(true);
   const imgPath = "http://image.tmdb.org/t/p/w500";
   const secUrl = "https://via.placeholder.com/600x400/cccccc/242020";
   console.log(data);
@@ -29,11 +30,32 @@ const Modal = ({ data, setOpen, open }) => {
           />
         </div>
         <div className="mb-2 mt-4 flex gap-x-2 ">
-          <div className="flex flex-col gap-y-2 w-2/3">
+          <div className="flex flex-col gap-y-2  md:w-2/3">
             <p className="text-white font-semibold text-lg md:text-xl ">
               {data.title}
             </p>
-            <p className="text-sm ">{data.overview.slice(0, 180)}...</p>
+
+            {seeMore ? (
+              <>
+                {" "}
+                <p className="text-sm ">
+                  {data.overview.slice(0, 180)}...
+                  <button className="text-white text-xs md:text-sm" onClick={() => setSeeMore(!seeMore)}>
+                    see more
+                  </button>
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="text-sm ">
+                  {data.overview}
+                  <button className="text-white text-xs md:text-sm " onClick={() => setSeeMore(!seeMore)}>
+                    see less
+                  </button>
+                </p>
+              </>
+            )}
+
             <p className="text-white text-xs">
               {data.release_date}{" "}
               <span className="border border-neutral-600 rounded-sm text-sm px-1">
@@ -41,9 +63,17 @@ const Modal = ({ data, setOpen, open }) => {
               </span>
             </p>
           </div>
-          <div className="hidden md:flex md:flex-col gap-2">
-            <p>Original Language: <span className="text-white capitalize">{data.original_language}</span></p>
-            <p>Total Votes: <span className="text-white capitalize">{data.vote_count}</span></p>
+          <div className="hidden md:flex md:flex-col md:justify-center gap-2">
+            <p>
+              Original Language:{" "}
+              <span className="text-white capitalize">
+                {data.original_language}
+              </span>
+            </p>
+            <p>
+              Total Votes:{" "}
+              <span className="text-white capitalize">{data.vote_count}</span>
+            </p>
           </div>
         </div>
       </div>
