@@ -23,6 +23,9 @@ const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,com
           <MovieRow title="Action" trendingdata={actiondata}/>
           <MovieRow title="Discover" trendingdata={originalsdata}/>
         </div>
+        <div>
+          Footer
+        </div>
       </div>
   )
 }
