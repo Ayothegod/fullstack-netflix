@@ -23,9 +23,6 @@ const MovieRow = ({ trendingdata, title }) => {
               />
             </div>
 
-            <div>
-              <p>Hello the text</p>
-            </div>
           </>
         ))}
       </div>
