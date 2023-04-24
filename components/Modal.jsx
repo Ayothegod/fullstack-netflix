@@ -28,16 +28,21 @@ const Modal = ({ data, setOpen, open }) => {
             blurDataURL="https://placehold.co"
           />
         </div>
-        <div className="mb-2 mt-4  ">
-          <div className="flex flex-col gap-y-2">
+        <div className="mb-2 mt-4 flex gap-x-2 ">
+          <div className="flex flex-col gap-y-2 w-2/3">
             <p className="text-white font-semibold text-lg md:text-xl ">
-            {data.title}
-          </p>
-          <p className="text-sm ">{data.overview.slice(0, 180)}...</p>
-            <p className="text-white text-xs">{data.release_date} <span className="border border-neutral-600 rounded-sm text-sm px-1">HD</span></p>
+              {data.title}
+            </p>
+            <p className="text-sm ">{data.overview.slice(0, 180)}...</p>
+            <p className="text-white text-xs">
+              {data.release_date}{" "}
+              <span className="border border-neutral-600 rounded-sm text-sm px-1">
+                HD
+              </span>
+            </p>
           </div>
-          <div>
-
+          <div className="hidden md:flex gap-2">
+            <p>Original Language: <span className="text-white capitalize">{data.original_language}</span></p>
           </div>
         </div>
       </div>
