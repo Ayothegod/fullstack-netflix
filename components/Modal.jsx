@@ -8,7 +8,8 @@ import { useStore } from "@/lib/store";
 
 const Modal = ({ data, setOpen, open }) => {
   const favourites = useStore(state => state .favourites)
-  // const addFavourites = useStore(state => state.addFavourites)
+  const addFavourites = useStore(state => state.addFavourites)
+  console.log(favourites);
 
   const [seeMore, setSeeMore] = useState(true);
   const imgPath = "http://image.tmdb.org/t/p/w500";
@@ -35,7 +36,7 @@ const Modal = ({ data, setOpen, open }) => {
 
           <div
             className="absolute bottom-2 left-2 bg-neutral-900 rounded-md z-50 cursor-pointer"
-            // onClick={}
+            onClick={() => addFavourites(data)}
           >
             <button className="flex items-center rounded-md gap-1 bg-white text-black text-md px-2 py-1 font-medium">
               <MdFavorite className="text-black text-md" />
