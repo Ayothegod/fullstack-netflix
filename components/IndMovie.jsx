@@ -1,12 +1,9 @@
 import Image from "next/image";
 import { useState } from "react";
 import Modal from "./Modal";
-import { useModal } from '@/lib/store'
 
 const IndMovie = ({ data }) => {
   const [open, setOpen] = useState(false);
-  const openModal = useModal(state => state.openModal)
-  const closeModal = useModal(state => state.closeModal)
   
   const imgPath = "http://image.tmdb.org/t/p/w500";
   const secUrl = "https://via.placeholder.com/600x400/cccccc/242020";

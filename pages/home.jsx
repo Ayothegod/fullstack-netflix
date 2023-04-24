@@ -4,20 +4,16 @@ import Banner from "@/components/Banner"
 import Image from "next/image"
 import requests from "@/lib/requests"
 import MovieRow from "@/components/MovieRow"
-import Modal from "@/components/Modal"
-import { useModal } from '@/lib/store'
 
 // const user = auth.currentUser;
 const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,comedydata,romancedata,documentarydata}) => {  
-  // const modal = useModal(state => state.open)
-  // const changeModal = useModal(state => state.changeOpen)
+
   const imgPath = "http://image.tmdb.org/t/p/w500"
   return (
       <div className="bg-black text-white h-full w-full ">
         <Header/>
         <Banner/>
         <div className="my-6 mx-2 ">
-        {/* {!modal &&  <Modal/>} */}
           <MovieRow title="Trending Movies" trendingdata={trendingdata}/>
           <MovieRow title="Romance Movies" trendingdata={romancedata}/>
           <MovieRow title="Top-Rated Movies" trendingdata={toprateddata}/>
