@@ -4,8 +4,12 @@ import Image from "next/image";
 import { GrClose } from "react-icons/gr";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdFavorite } from "react-icons/md";
+import { useStore } from "@/lib/store";
 
 const Modal = ({ data, setOpen, open }) => {
+  const favourites = useStore(state => state .favourites)
+  // const addFavourites = useStore(state => state.addFavourites)
+
   const [seeMore, setSeeMore] = useState(true);
   const imgPath = "http://image.tmdb.org/t/p/w500";
   const secUrl = "https://via.placeholder.com/600x400/cccccc/242020";
@@ -28,16 +32,23 @@ const Modal = ({ data, setOpen, open }) => {
             placeholder="blur"
             blurDataURL="https://placehold.co"
           />
+
           <div
             className="absolute bottom-2 left-2 bg-neutral-900 rounded-md z-50 cursor-pointer"
-            onClick={() => setOpen(!open)}
+            // onClick={}
           >
             <button className="flex items-center rounded-md gap-1 bg-white text-black text-md px-2 py-1 font-medium">
               <MdFavorite className="text-black text-md" />
               Favourite
             </button>
+            <p>{favourites.length}</p>
           </div>
+
         </div>
+
+
+
+
         <div className="mb-2 mt-4 flex gap-x-2 ">
           <div className="flex flex-col gap-y-2  md:w-2/3">
             <p className="text-white font-semibold text-lg md:text-xl ">
