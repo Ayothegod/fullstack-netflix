@@ -25,7 +25,7 @@ const Header = () => {
   });
   
   return (
-    <div className="h-12 fixed flex inset-0 items-center justify-between px-8 z-50 ">
+    <div className="h-12 fixed flex inset-0 items-center justify-between px-8 z-50 backdrop-blur-xl">
       <div className="flex items-center gap-4">
         <Image src={logo} alt="hello" className="w-20" />
         <div className="hidden md:flex md:gap-4  ">

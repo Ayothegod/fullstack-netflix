@@ -29,11 +29,11 @@ const Modal = ({ data, setOpen, open }) => {
             blurDataURL="https://placehold.co"
           />
           <div
-            className="absolute bottom-2 left-2 bg-neutral-900  z-50 cursor-pointer"
+            className="absolute bottom-2 left-2 bg-neutral-900 rounded-md z-50 cursor-pointer"
             onClick={() => setOpen(!open)}
           >
-            <button className="flex items-center rounded-md gap-1 bg-neutral-900 text-white text-md px-2 py-1 ">
-              <MdFavorite className="text-white text-md" />
+            <button className="flex items-center rounded-md gap-1 bg-white text-black text-md px-2 py-1 font-medium">
+              <MdFavorite className="text-black text-md" />
               Favourite
             </button>
           </div>
