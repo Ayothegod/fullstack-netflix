@@ -3,12 +3,12 @@ import MuiModal from "@mui/material/Modal";
 import Image from "next/image";
 import { GrClose } from "react-icons/gr";
 import { AiOutlineClose } from "react-icons/ai";
+import { MdFavorite } from "react-icons/md";
 
 const Modal = ({ data, setOpen, open }) => {
   const [seeMore, setSeeMore] = useState(true);
   const imgPath = "http://image.tmdb.org/t/p/w500";
   const secUrl = "https://via.placeholder.com/600x400/cccccc/242020";
-  console.log(data);
 
   return (
     <div className="h-full fixed inset-0 backdrop-blur-sm text-white flex items-center justify-center px-8">
@@ -28,6 +28,15 @@ const Modal = ({ data, setOpen, open }) => {
             placeholder="blur"
             blurDataURL="https://placehold.co"
           />
+          <div
+            className="absolute bottom-2 left-2 bg-neutral-900  z-50 cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
+            <button className="flex items-center rounded-md gap-1 bg-neutral-900 text-white text-md px-2 py-1 ">
+              <MdFavorite className="text-white text-md" />
+              Favourite
+            </button>
+          </div>
         </div>
         <div className="mb-2 mt-4 flex gap-x-2 ">
           <div className="flex flex-col gap-y-2  md:w-2/3">
@@ -40,7 +49,10 @@ const Modal = ({ data, setOpen, open }) => {
                 {" "}
                 <p className="text-sm ">
                   {data.overview.slice(0, 180)}...
-                  <button className="text-white text-xs md:text-sm" onClick={() => setSeeMore(!seeMore)}>
+                  <button
+                    className="text-white text-xs md:text-sm"
+                    onClick={() => setSeeMore(!seeMore)}
+                  >
                     see more
                   </button>
                 </p>
@@ -49,7 +61,10 @@ const Modal = ({ data, setOpen, open }) => {
               <>
                 <p className="text-sm ">
                   {data.overview}
-                  <button className="text-white text-xs md:text-sm " onClick={() => setSeeMore(!seeMore)}>
+                  <button
+                    className="text-white text-xs md:text-sm "
+                    onClick={() => setSeeMore(!seeMore)}
+                  >
                     see less
                   </button>
                 </p>
