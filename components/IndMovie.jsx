@@ -13,13 +13,13 @@ const IndMovie = ({ data }) => {
     <>
       <div
         key={data.id}
-        className="flex-shrink-0 my-1 cursor-pointer"
+        className="flex-shrink-0 my-1 cursor-pointer py-2 transition-transform duration-500 ease-in-out"
         onClick={() => setOpen(!open)}
       >
         <Image
           src={imgPath + data.poster_path}
           alt={data.original_title}
-          className=" object-cover object-center  rounded-md "
+          className=" object-cover object-center  rounded-md hover:scale-110 hover:mx-1 transition-transform duration-300 ease-in-out "
           width={150}
           height={100}
         />
