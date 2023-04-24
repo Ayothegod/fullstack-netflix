@@ -41,8 +41,9 @@ const Modal = ({ data, setOpen, open }) => {
               </span>
             </p>
           </div>
-          <div className="hidden md:flex gap-2">
+          <div className="hidden md:flex md:flex-col gap-2">
             <p>Original Language: <span className="text-white capitalize">{data.original_language}</span></p>
+            <p>Total Votes: <span className="text-white capitalize">{data.vote_count}</span></p>
           </div>
         </div>
       </div>
