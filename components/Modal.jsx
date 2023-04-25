@@ -10,6 +10,7 @@ import { useStore } from "@/lib/store";
 const Modal = ({ data, setOpen, open }) => {
   const favourites = useStore(state => state .favourites)
   const addFavourites = useStore(state => state.addFavourites)
+  const removeFromFavourites = useStore(state => state.removeFromFavourites)
   console.log(favourites);
 
   const addToFavourite = () => {
@@ -21,7 +22,8 @@ const Modal = ({ data, setOpen, open }) => {
   }
   const removeFromFavourite =() => {
     const check = favourites.filter(fav => fav === data)
-    console.log(check);
+    removeFromFavourites(data)
+    // console.log(check);
   }
 
   const [seeMore, setSeeMore] = useState(true);
