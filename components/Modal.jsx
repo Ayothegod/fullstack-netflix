@@ -18,12 +18,10 @@ const Modal = ({ data, setOpen, open }) => {
     if(check === false){
       addFavourites(data)
     } 
-    console.log(check);
   }
   const removeFromFavourite =() => {
     const check = favourites.filter(fav => fav === data)
     removeFromFavourites(data)
-    // console.log(check);
   }
 
   const [seeMore, setSeeMore] = useState(true);
