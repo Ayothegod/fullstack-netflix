@@ -16,8 +16,14 @@ const Modal = ({ data, setOpen, open }) => {
   const removeFromFavourites = useStore((state) => state.removeFromFavourites);
   console.log(favourites);
 
-  const NotifyForNewMovie = () => {
-    toast.success(`no of item in favourites: ${favourites.length + 1} `, {
+  const addToFavouriteToast = () => {
+    toast.success(`Added to Favourites.Favourites:${favourites.length + 1} `, {
+      className: "font-bold text-black absolute top-10 right-4",
+      autoClose: 2000,
+    });
+  };
+  const removeFromFavouriteToast = () => {
+    toast.success(`Removed from Favourites. Favourites:${favourites.length - 1}`, {
       className: "font-bold text-black absolute top-10 right-4",
       autoClose: 2000,
     });
@@ -27,12 +33,20 @@ const Modal = ({ data, setOpen, open }) => {
     const check = favourites.includes(data);
     if (check === false) {
       addFavourites(data);
-      NotifyForNewMovie()
+      addToFavouriteToast()
     }
   };
   const removeFromFavourite = () => {
     const check = favourites.filter((fav) => fav === data);
-    removeFromFavourites(data);
+    const removeCheck = favourites.includes(data);
+    if (removeCheck === true) {
+      removeFromFavourites(data);
+      removeFromFavouriteToast()
+    }
+    // if(check){
+    //   removeFromFavourites(data);
+    //   removeFromFavouriteToast()
+    // }
   };
 
   const [seeMore, setSeeMore] = useState(true);
