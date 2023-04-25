@@ -64,7 +64,7 @@ export default function Home() {
               Enjoy on your TV.
             </p>
             <p className="text-md font-semibold">
-              Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
+              Watch on Smart TVs, Playstation, Xbox, Chromecast,Apple TV,
               Blu-ray players, and more.
             </p>
           </div>
