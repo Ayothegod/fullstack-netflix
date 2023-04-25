@@ -37,8 +37,8 @@ const Header = ({trendingdata}) => {
         </div>
       </div>
       <div className="flex items-center gap-6 sm:w-2/3 justify-end">
-        <div className="gap-2 sm:w-2/3  items-center hidden md:flex">
-          {!searchbox && <input type="text" className="w-full px-2 bg-[rgba(0,0,0,0.9)] border border-neutral-500 py-1 rounded-sm outline-none" />}
+        <div className="gap-4 sm:w-2/3  items-center hidden md:flex justify-end">
+          {searchbox && <input type="text" className="w-full px-2 bg-[rgba(0,0,0,0.9)] border border-neutral-500 py-1 rounded-sm outline-none" />}
           <AiOutlineSearch className="w-6 h-6" onClick={() => setSearchbox(!searchbox)}/>
         {/* <Search /> */}
           <FaBell className="w-4 h-4" />
