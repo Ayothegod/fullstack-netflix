@@ -17,7 +17,7 @@ const Modal = ({ data, setOpen, open }) => {
   console.log(favourites);
 
   const NotifyForNewMovie = () => {
-    toast.success(`no of item in favourites: `, {
+    toast.success(`no of item in favourites: ${favourites.length + 1} `, {
       className: "font-bold text-black absolute top-10 right-4",
       autoClose: 2000,
     });
@@ -27,6 +27,7 @@ const Modal = ({ data, setOpen, open }) => {
     const check = favourites.includes(data);
     if (check === false) {
       addFavourites(data);
+      NotifyForNewMovie()
     }
   };
   const removeFromFavourite = () => {
@@ -62,7 +63,7 @@ const Modal = ({ data, setOpen, open }) => {
           <div className="absolute bottom-2 left-2 flex gap-2 z-50 cursor-pointer">
             <button
               className="flex items-center rounded-md gap-1 bg-white text-black text-md px-2 py-1 font-medium"
-              onClick={NotifyForNewMovie}
+              onClick={addToFavourite}
             >
               <MdFavorite className="text-black text-md" />
               Favourite
