@@ -28,13 +28,12 @@ const Header = ({ trendingdata }) => {
       }
     });
   });
-  useEffect(() => {
-    const data = trendingdata.filter(data => 
-      inputValue && data && data.title  && data.title.toLowerCase().includes(inputValue)
-      )
-      setSearchData(data)
-  },[inputValue,trendingdata])
-  console.log(searchData);
+  // useEffect(() => {
+  //   const data = trendingdata.filter(data => 
+  //     inputValue && data && data.title  && data.title.toLowerCase().includes(inputValue)
+  //     )
+  //     setSearchData(data)
+  // },[inputValue,trendingdata])
 
   return (
     <div className="h-12 fixed flex inset-0 items-center justify-between px-8 z-50 backdrop-blur-xl">
@@ -48,19 +47,19 @@ const Header = ({ trendingdata }) => {
       </div>
       <div className="flex items-center gap-6 sm:w-2/3 justify-end">
         <div className="gap-4 sm:w-2/3  items-center hidden md:flex justify-end">
-          {searchbox && (
+          {/* {searchbox && (
             <input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
               type="text"
               className="w-full px-2 bg-[rgba(0,0,0,0.9)] border border-neutral-500 py-1 rounded-sm outline-none"
             />
-          )}
+          )} */}
           <AiOutlineSearch
             className="w-6 h-6"
             onClick={() => setSearchbox(!searchbox)}
           />
-          {searchData.length >= 1 && <Search searchData={searchData}/>}
+          {/* {searchData.length >= 1 && <Search searchData={searchData}/>} */}
           <FaBell className="w-4 h-4" />
         </div>
         <div className="flex items-center">
