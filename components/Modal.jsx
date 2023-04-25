@@ -8,23 +8,20 @@ import { MdRemoveCircle } from "react-icons/md";
 import { useStore } from "@/lib/store";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { NotifyForNewMovie } from "@/lib/Toast";
 
 const Modal = ({ data, setOpen, open }) => {
   const favourites = useStore((state) => state.favourites);
   const addFavourites = useStore((state) => state.addFavourites);
   const removeFromFavourites = useStore((state) => state.removeFromFavourites);
   console.log(favourites);
-  // const notify = () => toast("Added to favourite");
 
-  const notify = () => {
-
-
-       toast.success(`no of item in favourites: ${favourites.length}`, {
-        className: 'font-bold text-black absolute top-10 right-4',
-        autoClose: 2000,
-      });
-
-    };
+  const NotifyForNewMovie = () => {
+    toast.success(`no of item in favourites: `, {
+      className: "font-bold text-black absolute top-10 right-4",
+      autoClose: 2000,
+    });
+  };
 
   const addToFavourite = () => {
     const check = favourites.includes(data);
@@ -44,8 +41,8 @@ const Modal = ({ data, setOpen, open }) => {
   return (
     <div className="h-full fixed inset-0 backdrop-blur-sm text-white flex items-center justify-center px-8">
       <div className="bg-[#151414] rounded-md p-2 text-[#999] w-full sm:w-3/4 md:w-2/3 relative ">
-        <ToastContainer/>
-        
+        <ToastContainer />
+
         <div
           className="absolute top-3 right-3 bg-neutral-900 p-2 rounded-full z-50 cursor-pointer"
           onClick={() => setOpen(!open)}
@@ -65,7 +62,7 @@ const Modal = ({ data, setOpen, open }) => {
           <div className="absolute bottom-2 left-2 flex gap-2 z-50 cursor-pointer">
             <button
               className="flex items-center rounded-md gap-1 bg-white text-black text-md px-2 py-1 font-medium"
-              onClick={notify}
+              onClick={NotifyForNewMovie}
             >
               <MdFavorite className="text-black text-md" />
               Favourite
