@@ -4,6 +4,7 @@ import Image from "next/image";
 import { GrClose } from "react-icons/gr";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdFavorite } from "react-icons/md";
+import { MdRemoveCircle } from "react-icons/md";
 import { useStore } from "@/lib/store";
 
 const Modal = ({ data, setOpen, open }) => {
@@ -16,8 +17,10 @@ const Modal = ({ data, setOpen, open }) => {
     if(check === false){
       addFavourites(data)
     } 
-    
     console.log(check);
+  }
+  const removeFromFavourite =() => {
+    
   }
 
   const [seeMore, setSeeMore] = useState(true);
@@ -36,7 +39,7 @@ const Modal = ({ data, setOpen, open }) => {
         <div className="w-full h-48 sm:h-60 md:h-72 relative">
           <Image
             src={imgPath + data.poster_path}
-            alt={data.original_title}
+            alt={data.title}
             className="object-cover object-center rounded-md  "
             fill
             placeholder="blur"
@@ -44,12 +47,17 @@ const Modal = ({ data, setOpen, open }) => {
           />
 
           <div
-            className="absolute bottom-2 left-2 bg-neutral-900 rounded-md z-50 cursor-pointer"
-            onClick={addToFavourite}
+            className="absolute bottom-2 left-2 flex gap-2 z-50 cursor-pointer"
+            
           >
-            <button className="flex items-center rounded-md gap-1 bg-white text-black text-md px-2 py-1 font-medium">
+            <button className="flex items-center rounded-md gap-1 bg-white text-black text-md px-2 py-1 font-medium" onClick={addToFavourite}>
               <MdFavorite className="text-black text-md" />
               Favourite
+            </button>
+
+            <button className="flex items-center rounded-md gap-1 bg-red-600 text-white text-md px-2 py-1 font-normal" onClick={addToFavourite}>
+              <MdRemoveCircle className="text-white text-sm" />
+              Remove 
             </button>
           </div>
 
