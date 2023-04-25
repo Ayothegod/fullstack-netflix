@@ -14,6 +14,8 @@ const Favourites = () => {
 
   return (
     <div>
+      {
+        favourites && <>
       <p className="text-xl flex items-center gap-2">
         Favourites{" "}
         <span className="flex items-center gap-2 text-[#999] text-sm">
@@ -22,12 +24,14 @@ const Favourites = () => {
         </span>
       </p>
       <div className="scroller flex gap-2 overflow-x-scroll overflow-y-hidden ">
-        {favourites.map((data, index) => (
+        { favourites.map((data, index) => (
           <>
             <IndMovie data={data} />
           </>
         ))}
       </div>
+      </>
+      }
     </div>
   );
 };
