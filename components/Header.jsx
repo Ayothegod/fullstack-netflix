@@ -8,10 +8,12 @@ import { FaBell } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
 import { auth } from "@/lib/firebase";
+import Search from "@/components/Search"
 
-const Header = () => {
+const Header = ({trendingdata}) => {
   const router = useRouter();
   const [email,setEmail] = useState("")
+  const [searchbox,setSearchbox] = useState(false)
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -31,12 +33,14 @@ const Header = () => {
         <div className="hidden md:flex md:gap-4  ">
           <p className="cursor-pointer">Home</p>
           <p className="cursor-pointer">TV Shows</p>
-          <p className="cursor-pointer">PlayList</p>
+          
         </div>
       </div>
-      <div className="flex items-center gap-6">
-        <div className=" gap-6 items-center hidden md:flex">
+      <div className="flex items-center gap-6 sm:w-2/3 justify-end">
+        <div className="gap-2  items-center hidden md:flex">
+          {!searchbox && <input type="text" className="w-62" />}
           <AiOutlineSearch className="w-6 h-6" />
+        {/* <Search /> */}
           <FaBell className="w-4 h-4" />
         </div>
         <div className="flex items-center">

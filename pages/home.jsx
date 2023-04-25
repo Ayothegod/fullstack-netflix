@@ -8,6 +8,7 @@ import {AiOutlineCopyrightCircle} from "react-icons/ai"
 import {AiFillHeart} from "react-icons/ai"
 import Favourites from "@/components/Favourites"
 import Link from "next/link"
+import Search from "@/components/Search"
 
 // const user = auth.currentUser;
 const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,comedydata,romancedata,documentarydata}) => {  
@@ -15,7 +16,7 @@ const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,com
   const imgPath = "http://image.tmdb.org/t/p/w500"
   return (
       <div className="bg-black text-white h-full w-full ">
-        <Header/>
+        <Header trendingdata={trendingdata}/>
         <Banner/>
         <div className="my-6 mx-2 ">
           <Favourites/>
