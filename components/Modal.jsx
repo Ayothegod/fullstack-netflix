@@ -19,9 +19,9 @@ const Modal = ({ data, setOpen, open }) => {
   const notify = () => {
 
 
-       toast.success(" with css class!", {
-        // position: toast.POSITION.BOTTOM_RIGHT,
-        className: 'font-bold text-black absolute top-10 right-4'
+       toast.success(`no of item in favourites: ${favourites.length}`, {
+        className: 'font-bold text-black absolute top-10 right-4',
+        autoClose: 2000,
       });
 
     };
@@ -44,7 +44,7 @@ const Modal = ({ data, setOpen, open }) => {
   return (
     <div className="h-full fixed inset-0 backdrop-blur-sm text-white flex items-center justify-center px-8">
       <div className="bg-[#151414] rounded-md p-2 text-[#999] w-full sm:w-3/4 md:w-2/3 relative ">
-        <ToastContainer />
+        <ToastContainer/>
         
         <div
           className="absolute top-3 right-3 bg-neutral-900 p-2 rounded-full z-50 cursor-pointer"
