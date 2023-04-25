@@ -28,6 +28,12 @@ const Header = ({ trendingdata }) => {
       }
     });
   });
+  useEffect(() => {
+    const data = trendingdata.filter(data => 
+       data.title.toLowerCase().includes(inputValue)
+      )
+      console.log(data);
+  },[inputValue,trendingdata])
 
   return (
     <div className="h-12 fixed flex inset-0 items-center justify-between px-8 z-50 backdrop-blur-xl">
