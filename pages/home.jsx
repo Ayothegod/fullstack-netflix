@@ -5,6 +5,7 @@ import Image from "next/image"
 import requests from "@/lib/requests"
 import MovieRow from "@/components/MovieRow"
 import {AiOutlineCopyrightCircle} from "react-icons/ai"
+import {AiFillHeart} from "react-icons/ai"
 import Favourites from "@/components/Favourites"
 
 // const user = auth.currentUser;
@@ -29,7 +30,7 @@ const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,com
         <div className="border-t border-t-neutral-800 py-2 px-4 text-neutral-600 flex items-center justify-between">
           <p className="flex items-center"><AiOutlineCopyrightCircle/>Ayomide 2023</p>
           <div>
-            <button>connect</button>
+            <button className="border border-neutral-800 py-1 px-2 rounded-md flex"><AiFillHeart/>connect</button>
           </div>
         </div>
       </div>
