@@ -1,16 +1,20 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "./Modal";
 import { useStore } from "@/lib/store";
 import IndMovie from "./IndMovie";
 import { MdArrowForward } from "react-icons/md";
 
 const Favourites = () => {
-  const [open, setOpen] = useState(false);
+  const [newFavourites, setNewFavourites] = useState([]);
   const favourites = useStore((state) => state.favourites);
 
   const imgPath = "http://image.tmdb.org/t/p/w500";
   const secUrl = "https://via.placeholder.com/600x400/cccccc/242020";
+
+  useEffect(() => {
+    setNewFavourites(favourites)
+  },[])
 
   return (
     <div>
@@ -24,7 +28,7 @@ const Favourites = () => {
         </span>
       </p>
       <div className="scroller flex gap-2 overflow-x-scroll overflow-y-hidden ">
-        { favourites.map((data, index) => (
+        { newFavourites.map((data, index) => (
           <>
             <IndMovie data={data} />
           </>
