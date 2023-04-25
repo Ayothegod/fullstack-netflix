@@ -1,3 +1,4 @@
+import IndMovie from "./IndMovie"
 
 
 const Search = ({searchData}) => {
@@ -8,7 +9,7 @@ const Search = ({searchData}) => {
             {
                 searchData.map(data => (
                     <div key={data.title}>
-                        <p>{data.title}</p>
+                        <IndMovie data={data}/>
                     </div>
                 ))
             }
