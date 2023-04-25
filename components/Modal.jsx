@@ -20,7 +20,8 @@ const Modal = ({ data, setOpen, open }) => {
     console.log(check);
   }
   const removeFromFavourite =() => {
-    
+    const check = favourites.filter(fav => fav === data)
+    console.log(check);
   }
 
   const [seeMore, setSeeMore] = useState(true);
@@ -55,7 +56,7 @@ const Modal = ({ data, setOpen, open }) => {
               Favourite
             </button>
 
-            <button className="flex items-center rounded-md gap-1 bg-red-600 text-white text-md px-2 py-1 font-normal" onClick={addToFavourite}>
+            <button className="flex items-center rounded-md gap-1 bg-red-600 text-white text-md px-2 py-1 font-normal" onClick={removeFromFavourite}>
               <MdRemoveCircle className="text-white text-sm" />
               Remove 
             </button>
