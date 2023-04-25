@@ -19,7 +19,7 @@ const IndMovie = ({ data }) => {
         <Image
           src={imgPath + data.poster_path}
           alt={data.title}
-          className=" object-cover object-center  rounded-md hover:scale-110 hover:mx-1 transition-transform duration-300 ease-in-out "
+          className=" object-cover object-center  rounded-md hover:scale-110 transition-transform duration-300 ease-in-out "
           width={150}
           height={100}
         />
