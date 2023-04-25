@@ -30,7 +30,7 @@ const Header = ({ trendingdata }) => {
   });
   useEffect(() => {
     const data = trendingdata.filter(data => 
-       data.title.toLowerCase().includes(inputValue)
+      data && data.title  && data.title.toLowerCase().includes(inputValue)
       )
       console.log(data);
   },[inputValue,trendingdata])
