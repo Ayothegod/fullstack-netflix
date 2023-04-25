@@ -5,6 +5,7 @@ import Image from "next/image"
 import requests from "@/lib/requests"
 import MovieRow from "@/components/MovieRow"
 import {AiOutlineCopyrightCircle} from "react-icons/ai"
+import Favourites from "@/components/Favourites"
 
 // const user = auth.currentUser;
 const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,comedydata,romancedata,documentarydata}) => {  
@@ -15,6 +16,7 @@ const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,com
         <Header/>
         <Banner/>
         <div className="my-6 mx-2 ">
+          <Favourites/>
           <MovieRow title="Trending Movies" trendingdata={trendingdata}/>
           <MovieRow title="Romance Movies" trendingdata={romancedata}/>
           <MovieRow title="Top-Rated Movies" trendingdata={toprateddata}/>
