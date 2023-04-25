@@ -50,7 +50,7 @@ const Modal = ({ data, setOpen, open }) => {
 
   return (
     <div className="h-full fixed inset-0 backdrop-blur-sm text-white flex items-center justify-center px-8">
-      <div className="bg-[#151414] rounded-md p-2 text-[#999] w-full sm:w-3/4 md:w-2/3 relative mt-96">
+      <div className="bg-[#151414] rounded-md p-2 text-[#999] w-full sm:w-3/4 md:w-2/3 relative ">
         <ToastContainer />
 
         <div

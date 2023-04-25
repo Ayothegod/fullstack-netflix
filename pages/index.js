@@ -6,6 +6,8 @@ import download from "assets/download.jpg";
 import Accordion from "@/components/Accordion";
 import Link from "next/link";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
+import {AiFillHeart} from "react-icons/ai"
+
 
 export default function Home() {
   return (
@@ -167,11 +169,13 @@ export default function Home() {
           </div>
           <p className="mt-10 text-lg font-medium">Netflix Nigeria</p>
         </div>
-        <div className="border-t border-t-neutral-800 p-2 text-neutral-700">
-          <p className="flex items-center">
-            <AiOutlineCopyrightCircle />
-            Ayomide 2023
-          </p>
+        <div className="border-t border-t-neutral-800 py-2 px-4 text-neutral-600 flex items-center justify-between">
+          <p className="flex items-center"><AiOutlineCopyrightCircle/>Ayomide 2023</p>
+          <div>
+            <Link href="https://twitter.com/aiiomide">
+            <button className="border border-neutral-800 py-1 px-2 rounded-md bg-white hover:bg-transparent flex items-center gap-2 "><AiFillHeart className="mt-1"/>connect</button>
+            </Link>
+          </div>
         </div>
       </main>
     </>
