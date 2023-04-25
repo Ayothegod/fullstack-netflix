@@ -8,24 +8,27 @@ import { FaBell } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
 import { auth } from "@/lib/firebase";
-import Search from "@/components/Search"
+import Search from "@/components/Search";
 
-const Header = ({trendingdata}) => {
+const Header = ({ trendingdata }) => {
   const router = useRouter();
-  const [email,setEmail] = useState("")
-  const [searchbox,setSearchbox] = useState(false)
+  const [email, setEmail] = useState("");
+  const [searchbox, setSearchbox] = useState(false);
+
+  const [inputValue, setInputValue] = useState("");
+  const [searchData, setSearchData] = useState([]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const email = user.email
-        setEmail(email)
+        const email = user.email;
+        setEmail(email);
       } else {
         console.log("no user !!!!!!");
       }
     });
   });
-  
+
   return (
     <div className="h-12 fixed flex inset-0 items-center justify-between px-8 z-50 backdrop-blur-xl">
       <div className="flex items-center gap-4">
@@ -38,20 +41,33 @@ const Header = ({trendingdata}) => {
       </div>
       <div className="flex items-center gap-6 sm:w-2/3 justify-end">
         <div className="gap-4 sm:w-2/3  items-center hidden md:flex justify-end">
-          {searchbox && <input type="text" className="w-full px-2 bg-[rgba(0,0,0,0.9)] border border-neutral-500 py-1 rounded-sm outline-none" />}
-          <AiOutlineSearch className="w-6 h-6" onClick={() => setSearchbox(!searchbox)}/>
-        {/* <Search /> */}
+          {searchbox && (
+            <input
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+              type="text"
+              className="w-full px-2 bg-[rgba(0,0,0,0.9)] border border-neutral-500 py-1 rounded-sm outline-none"
+            />
+          )}
+          <AiOutlineSearch
+            className="w-6 h-6"
+            onClick={() => setSearchbox(!searchbox)}
+          />
+          {/* <Search /> */}
           <FaBell className="w-4 h-4" />
         </div>
         <div className="flex items-center">
-        <Link href="/signout" className="flex items-center gap-1">
-          <p>{email}</p>
-          <Image src={netflixAvatar} alt="netflix-avatar" className="h-8 w-8" />
-        </Link>
+          <Link href="/signout" className="flex items-center gap-1">
+            <p>{email}</p>
+            <Image
+              src={netflixAvatar}
+              alt="netflix-avatar"
+              className="h-8 w-8"
+            />
+          </Link>
         </div>
       </div>
     </div>
   );
 };
 export default Header;
-
