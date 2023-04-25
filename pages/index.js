@@ -117,10 +117,8 @@ export default function Home() {
         </div>
         <div>
           <p className="text-center font-bold text-3xl md:text-4xl my-4">
-            Frequently Asked Questions
+            Join our mailing list
           </p>
-          <Accordion />
-          <Accordion />
           <section
             className="text-center  border-b-2
         md:border-b-4 border-b-slate-700 pb-8"
