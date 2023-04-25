@@ -8,7 +8,6 @@ import { MdRemoveCircle } from "react-icons/md";
 import { useStore } from "@/lib/store";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { NotifyForNewMovie } from "@/lib/Toast";
 
 const Modal = ({ data, setOpen, open }) => {
   const favourites = useStore((state) => state.favourites);
@@ -32,21 +31,17 @@ const Modal = ({ data, setOpen, open }) => {
   const addToFavourite = () => {
     const check = favourites.includes(data);
     if (check === false) {
-      addFavourites(data);
       addToFavouriteToast()
+      addFavourites(data);
     }
   };
   const removeFromFavourite = () => {
     const check = favourites.filter((fav) => fav === data);
     const removeCheck = favourites.includes(data);
     if (removeCheck === true) {
-      removeFromFavourites(data);
       removeFromFavouriteToast()
+      removeFromFavourites(data);
     }
-    // if(check){
-    //   removeFromFavourites(data);
-    //   removeFromFavouriteToast()
-    // }
   };
 
   const [seeMore, setSeeMore] = useState(true);

@@ -13,7 +13,7 @@ const Favourites = () => {
 
   return (
     <div>
-        Favourites
+        <p className="text-lg">Favourites <span>click on a </span></p>
       <div className="scroller flex gap-2 overflow-x-scroll overflow-y-hidden ">
         {favourites.map((data, index) => (
           <>
