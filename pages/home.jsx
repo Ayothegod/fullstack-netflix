@@ -26,8 +26,11 @@ const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,com
           <MovieRow title="Action" trendingdata={actiondata}/>
           <MovieRow title="Discover" trendingdata={originalsdata}/>
         </div>
-        <div className="border-t border-t-neutral-800 p-2 text-neutral-600">
+        <div className="border-t border-t-neutral-800 py-2 px-4 text-neutral-600 flex items-center justify-between">
           <p className="flex items-center"><AiOutlineCopyrightCircle/>Ayomide 2023</p>
+          <div>
+            <button>connect</button>
+          </div>
         </div>
       </div>
   )
