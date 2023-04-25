@@ -60,7 +60,7 @@ const Header = ({ trendingdata }) => {
             className="w-6 h-6"
             onClick={() => setSearchbox(!searchbox)}
           />
-          {searchData.length > 1 && <Search searchData={searchData}/>}
+          {searchData.length >= 1 && <Search searchData={searchData}/>}
           <FaBell className="w-4 h-4" />
         </div>
         <div className="flex items-center">
