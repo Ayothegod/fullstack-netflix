@@ -6,26 +6,36 @@ import { AiOutlineClose } from "react-icons/ai";
 import { MdFavorite } from "react-icons/md";
 import { MdRemoveCircle } from "react-icons/md";
 import { useStore } from "@/lib/store";
-import { ToastContainer, toast } from 'react-toastify';
- import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Modal = ({ data, setOpen, open }) => {
-  const favourites = useStore(state => state .favourites)
-  const addFavourites = useStore(state => state.addFavourites)
-  const removeFromFavourites = useStore(state => state.removeFromFavourites)
+  const favourites = useStore((state) => state.favourites);
+  const addFavourites = useStore((state) => state.addFavourites);
+  const removeFromFavourites = useStore((state) => state.removeFromFavourites);
   console.log(favourites);
-  const notify = () => toast("Added to favourite");
-  
+  // const notify = () => toast("Added to favourite");
+
+  const notify = () => {
+
+
+       toast.success(" with css class!", {
+        // position: toast.POSITION.BOTTOM_RIGHT,
+        className: 'font-bold text-black absolute top-10 right-4'
+      });
+
+    };
+
   const addToFavourite = () => {
-    const check = favourites.includes(data)
-    if(check === false){
-      addFavourites(data)
-    } 
-  }
-  const removeFromFavourite =() => {
-    const check = favourites.filter(fav => fav === data)
-    removeFromFavourites(data)
-  }
+    const check = favourites.includes(data);
+    if (check === false) {
+      addFavourites(data);
+    }
+  };
+  const removeFromFavourite = () => {
+    const check = favourites.filter((fav) => fav === data);
+    removeFromFavourites(data);
+  };
 
   const [seeMore, setSeeMore] = useState(true);
   const imgPath = "http://image.tmdb.org/t/p/w500";
@@ -35,6 +45,7 @@ const Modal = ({ data, setOpen, open }) => {
     <div className="h-full fixed inset-0 backdrop-blur-sm text-white flex items-center justify-center px-8">
       <div className="bg-[#151414] rounded-md p-2 text-[#999] w-full sm:w-3/4 md:w-2/3 relative ">
         <ToastContainer />
+        
         <div
           className="absolute top-3 right-3 bg-neutral-900 p-2 rounded-full z-50 cursor-pointer"
           onClick={() => setOpen(!open)}
@@ -51,26 +62,24 @@ const Modal = ({ data, setOpen, open }) => {
             blurDataURL="https://placehold.co"
           />
 
-          <div
-            className="absolute bottom-2 left-2 flex gap-2 z-50 cursor-pointer"
-            
-            >
-            <button className="flex items-center rounded-md gap-1 bg-white text-black text-md px-2 py-1 font-medium" onClick={notify}
+          <div className="absolute bottom-2 left-2 flex gap-2 z-50 cursor-pointer">
+            <button
+              className="flex items-center rounded-md gap-1 bg-white text-black text-md px-2 py-1 font-medium"
+              onClick={notify}
             >
               <MdFavorite className="text-black text-md" />
               Favourite
             </button>
 
-            <button className="flex items-center rounded-md gap-1 bg-red-600 text-white text-md px-2 py-1 font-normal" onClick={removeFromFavourite}>
+            <button
+              className="flex items-center rounded-md gap-1 bg-red-600 text-white text-md px-2 py-1 font-normal"
+              onClick={removeFromFavourite}
+            >
               <MdRemoveCircle className="text-white text-sm" />
-              Remove 
+              Remove
             </button>
           </div>
-
         </div>
-
-
-
 
         <div className="mb-2 mt-4 flex gap-x-2 ">
           <div className="flex flex-col gap-y-2  md:w-2/3">
