@@ -14,7 +14,7 @@ const Favourites = () => {
 
   useEffect(() => {
     setNewFavourites(favourites)
-  },[])
+  },[favourites])
 
   return (
     <div>
