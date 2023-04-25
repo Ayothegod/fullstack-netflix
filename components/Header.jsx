@@ -30,10 +30,11 @@ const Header = ({ trendingdata }) => {
   });
   useEffect(() => {
     const data = trendingdata.filter(data => 
-      data && data.title  && data.title.toLowerCase().includes(inputValue)
+      inputValue && data && data.title  && data.title.toLowerCase().includes(inputValue)
       )
-      console.log(data);
+      setSearchData(data)
   },[inputValue,trendingdata])
+  console.log(searchData);
 
   return (
     <div className="h-12 fixed flex inset-0 items-center justify-between px-8 z-50 backdrop-blur-xl">
@@ -59,7 +60,7 @@ const Header = ({ trendingdata }) => {
             className="w-6 h-6"
             onClick={() => setSearchbox(!searchbox)}
           />
-          {/* <Search /> */}
+          {searchData.length > 1 && <Search searchData={searchData}/>}
           <FaBell className="w-4 h-4" />
         </div>
         <div className="flex items-center">
