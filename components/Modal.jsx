@@ -18,13 +18,13 @@ const Modal = ({ data, setOpen, open }) => {
 
   const addToFavouriteToast = () => {
     toast.success(`Added to Favourites.Favourites:${favourites.length + 1} `, {
-      className: "font-bold text-black absolute top-10 right-4",
+      className: "font-bold text-black absolute top-10 md:right-4 ",
       autoClose: 2000,
     });
   };
   const removeFromFavouriteToast = () => {
     toast.success(`Removed from Favourites. Favourites:${favourites.length - 1}`, {
-      className: "font-bold text-black absolute top-10 right-4",
+      className: "font-bold text-black absolute top-10 right-0",
       autoClose: 2000,
     });
   };
