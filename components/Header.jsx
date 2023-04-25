@@ -33,13 +33,13 @@ const Header = ({trendingdata}) => {
         <div className="hidden md:flex md:gap-4  ">
           <p className="cursor-pointer">Home</p>
           <p className="cursor-pointer">TV Shows</p>
-          
+          <p className="cursor-pointer sm:hidden lg:flex">PlayList</p>
         </div>
       </div>
       <div className="flex items-center gap-6 sm:w-2/3 justify-end">
-        <div className="gap-2  items-center hidden md:flex">
-          {!searchbox && <input type="text" className="w-62" />}
-          <AiOutlineSearch className="w-6 h-6" />
+        <div className="gap-2 sm:w-2/3  items-center hidden md:flex">
+          {!searchbox && <input type="text" className="w-full px-2 bg-[rgba(0,0,0,0.9)] border border-neutral-500 py-1 rounded-sm outline-none" />}
+          <AiOutlineSearch className="w-6 h-6" onClick={() => setSearchbox(!searchbox)}/>
         {/* <Search /> */}
           <FaBell className="w-4 h-4" />
         </div>
