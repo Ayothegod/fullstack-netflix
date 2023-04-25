@@ -7,6 +7,7 @@ import MovieRow from "@/components/MovieRow"
 import {AiOutlineCopyrightCircle} from "react-icons/ai"
 import {AiFillHeart} from "react-icons/ai"
 import Favourites from "@/components/Favourites"
+import Link from "next/link"
 
 // const user = auth.currentUser;
 const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,comedydata,romancedata,documentarydata}) => {  
@@ -30,7 +31,9 @@ const Home = ({trendingdata,horrordata,originalsdata,toprateddata,actiondata,com
         <div className="border-t border-t-neutral-800 py-2 px-4 text-neutral-600 flex items-center justify-between">
           <p className="flex items-center"><AiOutlineCopyrightCircle/>Ayomide 2023</p>
           <div>
-            <button className="border border-neutral-800 py-1 px-2 rounded-md flex"><AiFillHeart/>connect</button>
+            <Link href="https://twitter.com/aiiomide">
+            <button className="border border-neutral-800 py-1 px-2 rounded-md bg-white hover:bg-transparent flex items-center gap-2 "><AiFillHeart className="mt-1"/>connect</button>
+            </Link>
           </div>
         </div>
       </div>
