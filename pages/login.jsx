@@ -48,15 +48,17 @@ const Login = () => {
                   </p>
                 </div>
               </div>
+              {/* <input type="email" name="email" id="" />
+              <input type="password" name="password" id="" /> */}
 
               <input
-                type="text"
+                type="email" name="email"
                 placeholder="email"
                 ref={emailRef}
                 className="w-full p-3 text-black rounded-md placeholder:text-lg outline-none border-none bg-gray-600"
               />
               <input
-                type="password"
+                type="password" name="password"
                 placeholder="password"
                 ref={passwordRef}
                 className="w-full text-black p-3 rounded-md placeholder:text-lg outline-none border-none bg-gray-600"
