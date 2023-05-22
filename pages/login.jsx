@@ -12,6 +12,7 @@ const Login = () => {
 
   const login = (e) => {
     e.preventDefault();
+    console.log("trying");
     router.push("/home")
     // const email = emailRef.current.value;
     // const password = passwordRef.current.value;
