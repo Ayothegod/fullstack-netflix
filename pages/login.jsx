@@ -8,7 +8,7 @@ const Login = () => {
   // const auth = getAuth(app);
   // const emailRef = useRef();
   // const passwordRef = useRef();
-  // const router = useRouter();
+  const router = useRouter();
 
   const login = (e) => {
     e.preventDefault();
