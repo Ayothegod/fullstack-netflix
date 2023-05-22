@@ -21,23 +21,24 @@ const Register = () => {
 
   const register = (e) => {
     e.preventDefault();
+    router.push("/home");
     // const displayName = nameRef.current.value;
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        router.push("/home");
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-      });
+    // const email = emailRef.current.value;
+    // const password = passwordRef.current.value;
+    // createUserWithEmailAndPassword(auth, email, password)
+    //   .then((userCredential) => {
+    //     // Signed in
+    //     const user = userCredential.user;
+    //     console.log(user);
+    //     router.push("/home");
+    //     // ...
+    //   })
+    //   .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     console.log(errorCode);
+    //     console.log(errorMessage);
+    //   });
   };
   return (
     <div>
@@ -47,11 +48,10 @@ const Register = () => {
             <div className="bg-black p-8 h-screen md:h-auto sm:w-96 flex flex-col gap-4 justify-center w-screen ">
               <p className=" font-bold text-3xl md:text-4xl">Sign Up</p>
 
-              {/* <input type="text" placeholder="name" ref={nameRef} className='w-full p-3 rounded-md placeholder:text-lg text-black outline-none border-none bg-gray-600' /> */}
 
-            <input type="email" name="email" placeholder="email" ref={emailRef}
+            {/* <input type="email" name="email" placeholder="email" ref={emailRef}
             className='w-full p-3 rounded-md text-black placeholder:text-lg outline-none border-none bg-gray-600' />
-            <input type="password" name="password" placeholder="password" ref={passwordRef} className='w-full p-3 rounded-md text-black placeholder:text-lg outline-none border-none bg-gray-600' />
+            <input type="password" name="password" placeholder="password" ref={passwordRef} className='w-full p-3 rounded-md text-black placeholder:text-lg outline-none border-none bg-gray-600' /> */}
             <button onClick={register} className='w-full p-3 rounded-md  outline-none border-none bg-red-600 font-semibold text-lg mt-8'>Sign Up</button>
             <p className="mt-10">
               Already have an account? <span className="font-bold text-lg">

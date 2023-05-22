@@ -5,14 +5,14 @@ import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 // testapp.com,testapp
 const Login = () => {
-  const auth = getAuth(app);
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const router = useRouter();
+  // const auth = getAuth(app);
+  // const emailRef = useRef();
+  // const passwordRef = useRef();
+  // const router = useRouter();
 
   const login = (e) => {
     e.preventDefault();
-    router.push("/")
+    router.push("/home")
     // const email = emailRef.current.value;
     // const password = passwordRef.current.value;
     // signInWithEmailAndPassword(auth, email, password)
