@@ -12,21 +12,22 @@ const Login = () => {
 
   const login = (e) => {
     e.preventDefault();
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        router.push("/home");
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage);
-        console.log(errorCode);
-      });
+    router.push("/")
+    // const email = emailRef.current.value;
+    // const password = passwordRef.current.value;
+    // signInWithEmailAndPassword(auth, email, password)
+    //   .then((userCredential) => {
+    //     const user = userCredential.user;
+    //     console.log(user);
+    //     router.push("/home");
+    //     // ...
+    //   })
+    //   .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     console.log(errorMessage);
+    //     console.log(errorCode);
+    //   });
   };
 
   return (
@@ -51,7 +52,7 @@ const Login = () => {
               {/* <input type="email" name="email" id="" />
               <input type="password" name="password" id="" /> */}
 
-              <input
+              {/* <input
                 type="email" name="email"
                 placeholder="email"
                 ref={emailRef}
@@ -62,7 +63,7 @@ const Login = () => {
                 placeholder="password"
                 ref={passwordRef}
                 className="w-full text-black p-3 rounded-md placeholder:text-lg outline-none border-none bg-gray-600"
-              />
+              /> */}
               <button
                 onClick={login}
                 className="w-full p-3 rounded-md  outline-none border-none bg-red-600 font-semibold text-lg mt-8"
