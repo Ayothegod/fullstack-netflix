@@ -12,7 +12,7 @@ import Search from "@/components/Search";
 
 const Header = ({ trendingdata }) => {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("no email");
   const [searchbox, setSearchbox] = useState(false);
 
   const [inputValue, setInputValue] = useState("");
