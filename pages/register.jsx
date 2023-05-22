@@ -21,7 +21,7 @@ const Register = () => {
 
   const register = (e) => {
     e.preventDefault();
-    console.log('ttrfty');
+    console.log('ttrftmsdkjy');
     router.push("/home");
     // const displayName = nameRef.current.value;
     // const email = emailRef.current.value;
