@@ -18,23 +18,17 @@ const Header = ({ trendingdata }) => {
   const [inputValue, setInputValue] = useState("");
   const [searchData, setSearchData] = useState([]);
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const email = user.email;
-        setEmail(email);
-      } else {
-        console.log("no user !!!!!!");
-      }
-    });
-  });
   // useEffect(() => {
-  //   const data = trendingdata.filter(data => 
-  //     inputValue && data && data.title  && data.title.toLowerCase().includes(inputValue)
-  //     )
-  //     setSearchData(data)
-  // },[inputValue,trendingdata])
-
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       const email = user.email;
+  //       setEmail(email);
+  //     } else {
+  //       console.log("no user !!!!!!");
+  //     }
+  //   });
+  // });
+  
   return (
     <div className="h-12 fixed flex inset-0 items-center justify-between px-8 z-50 backdrop-blur-xl">
       <div className="flex items-center gap-4">
@@ -77,3 +71,10 @@ const Header = ({ trendingdata }) => {
   );
 };
 export default Header;
+
+    // useEffect(() => {
+    //   const data = trendingdata.filter(data => 
+    //     inputValue && data && data.title  && data.title.toLowerCase().includes(inputValue)
+    //     )
+    //     setSearchData(data)
+    // },[inputValue,trendingdata])
